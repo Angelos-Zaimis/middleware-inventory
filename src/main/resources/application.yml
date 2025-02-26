@@ -1,0 +1,53 @@
+service:
+  host:
+    name: localhost
+    port: 8082
+    prefix:
+  auth:
+    prefix:
+    url: http://localhost
+  middleware:
+    inventory-url: http//${service.host.name}:8325/middleware-service
+
+server:
+  port: 8082
+
+jpa:
+  fallback-provider-id: 123123123
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5010/datasource_inventorydb
+    username: testuser
+    password: 11111
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: middleware-inventory
+  flyway:
+    enabled: true
+    locations: /db/migration/schema
+    baseline-on-migrate: true
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8081/oauth2/jwks
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    doc-expansion: none
+    path: /middleware-inventory/swagger
+
+logging:
+  level:
+    root: INFO
+    com.middleware_inventory: DEBUG
