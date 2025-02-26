@@ -1,10 +1,13 @@
 plugins {
+	id 'org.springframework.boot' version '3.3.5'
+	id 'io.spring.dependency-management' version '1.1.6'
 	id 'java'
-	id 'org.springframework.boot' version '3.4.1'
-	id 'io.spring.dependency-management' version '1.1.7'
+	id 'maven-publish'
+	id 'jacoco'
+	id 'com.palantir.git-version' version '3.1.0'
 }
 
-group = 'com.middlleware-inventory'
+group = 'com.middleware-inventory'
 version = '0.0.1-SNAPSHOT'
 
 java {
@@ -29,7 +32,6 @@ ext {
 	set('jsoupVersion', "1.17.1")
 	set('springAddonsVersion', "7.1.15")
 	set('resilience4jVersion', '2.2.0')
-	set('querydslVersion', '5.1.0')
 }
 
 dependencies {
@@ -67,7 +69,7 @@ dependencies {
 
 	// Third-party utilities
 	implementation "org.apache.commons:commons-lang3"
-//	implementation "com.squareup.okhttp3:okhttp"
+	implementation "com.squareup.okhttp3:okhttp"
 	implementation "org.json:json:${orgJsonVersion}"
 
 	// MapStruct for mapping
@@ -88,9 +90,6 @@ dependencies {
 
 	// JSoup for HTML parsing
 	implementation "org.jsoup:jsoup:${jsoupVersion}"
-
-	implementation "com.querydsl:querydsl-jpa:${querydslVersion}:jakarta"
-	annotationProcessor "com.querydsl:querydsl-apt:${querydslVersion}:jakarta"
 
 	// Testing libraries
 	testImplementation 'org.junit.jupiter:junit-jupiter-api'
@@ -131,7 +130,6 @@ dependencies {
 	implementation 'com.blazebit:blaze-persistence-core-impl-jakarta:1.6.12'
 	implementation 'com.blazebit:blaze-persistence-integration-hibernate-6.2:1.6.12'
 }
-
 
 tasks.named('test') {
 	useJUnitPlatform()
