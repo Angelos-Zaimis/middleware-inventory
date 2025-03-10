@@ -1,5 +1,6 @@
 package com.middlleware_inventory.middlleware_inventory.configuration.kafka;
 
+import com.middlleware_inventory.middlleware_inventory.dto.product.UpdateInventoryDTO;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.jsoup.internal.StringUtil;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
