@@ -3,7 +3,7 @@ package com.middlleware_inventory.middlleware_inventory.service.kafka;
 import com.middlleware_inventory.middlleware_inventory.configuration.kafka.KafkaGroup;
 import com.middlleware_inventory.middlleware_inventory.configuration.kafka.KafkaTopics;
 import com.middlleware_inventory.middlleware_inventory.dto.product.UpdateInventoryDTO;
-import com.middlleware_inventory.middlleware_inventory.service.InventoryConsumerService;
+import com.middlleware_inventory.middlleware_inventory.service.consumer.InventoryConsumerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

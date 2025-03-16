@@ -10,7 +10,7 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductDTO {
+public class ProductUpdateDTO {
 
     @NotNull(message = "Product id must not be null")
     private UUID productId;

@@ -18,7 +18,7 @@ public class UpdateInventoryDTO {
 
     @NotNull(message = "Products must not be null")
     @NotEmpty(message = "Products must not be empty")
-    private List<ProductDTO> products;
+    private List<ProductUpdateDTO> products;
 
     @NotNull(message = "User Id must not be null")
     private UUID userId;
