@@ -1,7 +1,6 @@
-package com.middlleware_inventory.middlleware_inventory.service;
+package com.middlleware_inventory.middlleware_inventory.service.consumer;
 
 import com.middlleware_inventory.middlleware_inventory.dto.product.UpdateInventoryDTO;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
